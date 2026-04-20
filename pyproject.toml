@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "euc-doctor"
+version = "0.1.0"
+description = "A mac-first CLI troubleshooting toolkit for EUC and support engineers."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Faris Ababneh" }]
+dependencies = [
+  "InquirerPy>=0.3.4",
+  "psutil>=5.9.8",
+  "rich>=13.7.1",
+  "typer>=0.12.3",
+]
+
+[project.scripts]
+euc-doctor = "euc_doctor.cli:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["euc_doctor"]
